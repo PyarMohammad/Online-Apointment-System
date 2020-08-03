@@ -1,0 +1,123 @@
+create database Entity_OAPS
+use Entity_OAPS
+
+alter database LoginProject290720 modify name =  Entity_OAS
+
+--drop procedure usp_tblStudent_insert
+
+--alter table Student add status int default 0
+
+--alter table Student add inserted_date date
+
+--alter table Student add course varchar(50)
+
+-------------------------------------------------------------------
+
+create table PatientDetails
+(
+  p_id int primary key identity,
+  p_fname varchar(50),
+  p_lname varchar(50),
+  p_age int,
+  p_gender varchar(50),
+  p_address varchar(50),
+  p_phone int,
+  p_email varchar(50),
+  p_current_diagnosis varchar(50),
+  p_blood_group varchar(50),
+  p_bed_no int,
+  p_dept varchar(50),
+  p_hopital_name varchar(50)
+)
+
+select *from PatientDetails
+-------------------------------------------------------------------------------
+
+create table HospitalDetails
+(
+  H_id int primary key identity,
+  H_name varchar(50),
+  H_city varchar(50),
+  H_phone int
+)
+
+select *from HospitalDetails
+---------------------------------------------------------------------------------------------------------
+create table tblCity
+(
+cid int primary key identity,
+cname varchar(50)
+)
+insert into tblCity(cname)values('Noida'),('Greater Noida'),('Delhi')
+
+select * from tblCity
+
+------------------------------------------------------------------------
+
+create table tblRegistration
+(
+  p_id int primary key identity,
+  p_fname varchar(50),
+  p_lname varchar(50),
+  p_age int,
+  p_gender varchar(50),
+  p_address varchar(50),
+  p_phone int,
+  p_email varchar(50),
+  p_current_diagnosis varchar(50),
+  password varchar(50),
+  c_password varchar(50)
+)
+
+select *from tblRegistration
+
+-----------------------------------------------------------------------------------
+
+create table tblLogin
+(
+  p_id int primary key identity,
+  p_email varchar(50),
+  password varchar(50)
+)
+
+select *from tblLogin
+
+-------------------------------------------------------------------------------
+
+create table tblAppointment
+(
+  p_id int primary key identity,
+  p_name varchar(50),
+  dept varchar(50),
+  appointment_date varchar(50),
+  p_problem varchar(50),
+  p_phone int,
+  p_email varchar(50)
+)
+
+select * from tblAppointment
+----------------------------------------------------------------------------------
+
+create table tblfeedback
+(
+  id int primary key identity,
+  name varchar(50),
+  comment varchar(50)
+)
+
+select * from tblfeedback
+
+----------------------------------------------------------------------------------
+
+select * from PatientDetails
+select * from HospitalDetails
+select *from tblRegistration
+select *from tblLogin
+select * from tblCity 
+select * from tblAppointment
+select * from tblfeedback
+
+
+
+
+truncate table  tblStudent
